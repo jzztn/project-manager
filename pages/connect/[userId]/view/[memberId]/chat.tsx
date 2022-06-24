@@ -96,14 +96,14 @@ const Chatbox = ({ initialUser, initialMember, initialProject }: IProps) => {
 
                 <div>
                   <h1 className='font-medium tracking-wide'>{project.name}</h1>
-                  <p className='text-xs mt-1'>{project!.members!.length} members</p>
+                  {/* <p className='text-xs mt-1'>{project!.members!.length} members</p> */}
                 </div>
               </div>
 
               {/* chat */}
               <div className="grid grid-rows-[1fr,auto] gap-3">
                 {/* chats */}
-                <div className="grid grid-rows-3 gap-4 h-full bg-snow p-4 overflow-y-scroll">
+                <div className="flex flex-col gap-4 h-[700px] bg-snow p-4 overflow-y-scroll">
                   {messages?.map((message) => {
                     return (
                       <div
