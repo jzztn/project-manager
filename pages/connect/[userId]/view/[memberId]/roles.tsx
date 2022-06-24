@@ -51,9 +51,7 @@ const Roles: NextPage<IProps> = ({
   return (
     <Foundation title="Project Members">
       <Layout>
-        <Header
-          fullname={user.name} image={user.image} id={user.id}
-        />
+        <Header fullname={user.name} image={user.image} id={user.id} />
         <Main>
           <section>
             <div className="grid gap-10">
@@ -83,11 +81,9 @@ const Roles: NextPage<IProps> = ({
               </h4>
               {/* project roles */}
               <div className="grid grid-cols-4 gap-5">
-                {roles?.map((role) => {
-                  if (role.name !== 'Member') {
-                    return <ProjectRole key={role.id} role={role} />
-                  }
-                })}
+                {roles?.map((role) => (
+                  <ProjectRole key={role.id} role={role} />
+                ))}
               </div>
             </div>
           </section>
@@ -167,11 +163,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             include: {
               member: {
                 include: {
-                  user:true
-                }
-              }
-            }
-          }
+                  user: true,
+                },
+              },
+            },
+          },
         },
       },
     },
